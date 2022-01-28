@@ -21,8 +21,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quoter", "Quoter\Quoter.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quoter.Web", "Quoter.Web\Quoter.Web.csproj", "{09546C84-41F9-41F7-8E18-0F92C8D2FB30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResXTools.Extension.Experiments", "ResXTools.Extension.Experiments\ResXTools.Extension.Experiments.csproj", "{58929BCF-0BE9-414C-AC3B-1F3C24E18F09}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,14 +69,6 @@ Global
 		{09546C84-41F9-41F7-8E18-0F92C8D2FB30}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09546C84-41F9-41F7-8E18-0F92C8D2FB30}.Release|x86.ActiveCfg = Release|Any CPU
 		{09546C84-41F9-41F7-8E18-0F92C8D2FB30}.Release|x86.Build.0 = Release|Any CPU
-		{58929BCF-0BE9-414C-AC3B-1F3C24E18F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58929BCF-0BE9-414C-AC3B-1F3C24E18F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58929BCF-0BE9-414C-AC3B-1F3C24E18F09}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{58929BCF-0BE9-414C-AC3B-1F3C24E18F09}.Debug|x86.Build.0 = Debug|Any CPU
-		{58929BCF-0BE9-414C-AC3B-1F3C24E18F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58929BCF-0BE9-414C-AC3B-1F3C24E18F09}.Release|Any CPU.Build.0 = Release|Any CPU
-		{58929BCF-0BE9-414C-AC3B-1F3C24E18F09}.Release|x86.ActiveCfg = Release|Any CPU
-		{58929BCF-0BE9-414C-AC3B-1F3C24E18F09}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,7 +79,6 @@ Global
 		{C555B82A-F3FE-4257-A6A2-6613EEE8AE3B} = {12622731-A75A-4EF4-9D0A-B20ECD061B60}
 		{A38B16E3-2BAE-4CFB-9477-AA0095AE4508} = {A896AB0D-36E8-402D-A807-76A571C00C8A}
 		{09546C84-41F9-41F7-8E18-0F92C8D2FB30} = {A896AB0D-36E8-402D-A807-76A571C00C8A}
-		{58929BCF-0BE9-414C-AC3B-1F3C24E18F09} = {FB273315-6C04-4D13-B58F-C1586442BBFB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {180CF09B-E491-423A-9D5A-6560658D9637}

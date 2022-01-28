@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using ResXTools.Mocks.Designer.Properties.Resources;
 
 namespace ResXTools.Mocks.Designer
 {
@@ -21,8 +20,10 @@ namespace ResXTools.Mocks.Designer
         {
             services
                 .AddLogging(configure => configure.AddConsole())
-                .AddLocalization()
-                .AddSingleton<ServiceDesigner, ServiceDesigner>();
+                .AddLocalization();
+
+            ServiceDesigners.GeneratedServiceDesigner.AddService(services);
+            ServiceDesigners.TemplatedServiceDesigner.AddService(services);
         }
     }
 }

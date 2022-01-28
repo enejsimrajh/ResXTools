@@ -1,17 +1,18 @@
-﻿using Microsoft.Extensions.Logging;
-using ResXTools.Mocks.Designer.Properties.Resources;
+﻿using ResXTools.Mocks.Designer.Properties.Resources;
+using ResXTools.Mocks.Designer.ServiceDesigners;
 
 namespace ResXTools.Mocks.Designer
 {
     internal class Startup
     {
-        private readonly ILogger<Startup> _logger;
-        private readonly ServiceDesigner _serviceDesigner;
+        private readonly GeneratedServiceDesigner _generatedServiceDesigner;
+        private readonly TemplatedServiceDesigner _templatedServiceDesigner;
 
-        public Startup(ILogger<Startup> logger, ServiceDesigner globalResources)
+        public Startup(GeneratedServiceDesigner generatedServiceDesigner, TemplatedServiceDesigner templatedServiceDesigner)
         {
-            _logger = logger;
-            _serviceDesigner = globalResources;
+            _generatedServiceDesigner = generatedServiceDesigner;
+            _templatedServiceDesigner = templatedServiceDesigner;
+
         }
 
         public void Run()
@@ -31,41 +32,8 @@ namespace ResXTools.Mocks.Designer
 
         private void Execute()
         {
-            var resources = new List<Resource>
-            {
-                new Resource(ServiceDesigner.Keys.WelcomeMessage, _serviceDesigner.WelcomeMessage),
-                new Resource(ServiceDesigner.Keys.UserWelcomeMessage, _serviceDesigner.UserWelcomeMessage("Enej")),
-                new Resource(ServiceDesigner.Keys.EscapeExample, _serviceDesigner.EscapeExample),
-                new Resource(ServiceDesigner.Keys.FormatExample, _serviceDesigner.FormatExample("Enej")),
-            };
-
-            foreach (var resource in resources)
-            {
-                resource.Print();
-            }
-        }
-
-        private struct Resource
-        {
-            public Resource()
-            {
-            }
-
-            public Resource(string key, string value)
-            {
-                Key = key;
-                Value = value;
-            }
-
-            public string Key { get; set; } = string.Empty;
-
-            public string Value { get; set; } = string.Empty;
-
-            public void Print()
-            {
-                Console.WriteLine($"Key: {Key}");
-                Console.WriteLine($"Value: {Value}");
-            }
+            _generatedServiceDesigner.PrintResources();
+            _templatedServiceDesigner.PrintResources();
         }
     }
 }
