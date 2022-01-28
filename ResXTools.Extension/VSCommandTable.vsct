@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<Extern href="stdidcmd.h" />
+	<Extern href="vsshlids.h" />
+	<Include href="KnownImageIds.vsct" />
+
+	<Commands package="ResXTools">
+		<Groups>
+			<Group guid="ResXDesignerGeneratorsCmdSet" id="SubMenuGroup" />
+			<Group guid="ResXDesignerGeneratorsCmdSet" id="CommandGroup" />
+		</Groups>
+
+		<Menus>
+			<Menu guid="ResXDesignerGeneratorsCmdSet" id="SubMenu" priority="0x0100" type="Menu">
+				<CommandFlag>DynamicVisibility</CommandFlag>
+				<Strings>
+					<ButtonText>ResX Tools</ButtonText>
+					<CommandName>ResXTools</CommandName>
+				</Strings>
+			</Menu>
+		</Menus>
+
+		<Buttons>
+			<Button guid="ResXDesignerGeneratorsCmdSet" id="ApplyStaticGeneratorCommand" type="Button">
+				<Icon guid="ImageCatalogGuid" id="TriggerScript" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Use Static Generator</ButtonText>
+					<CommandName>UseStaticGenerator</CommandName>
+				</Strings>
+			</Button>
+
+			<Button guid="ResXDesignerGeneratorsCmdSet" id="ApplyServiceGeneratorCommand" type="Button">
+				<Icon guid="ImageCatalogGuid" id="TriggerScript" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Use Service Generator</ButtonText>
+					<CommandName>UseServiceGenerator</CommandName>
+				</Strings>
+			</Button>
+		</Buttons>
+	</Commands>
+
+	<CommandPlacements>
+		<CommandPlacement guid="ResXDesignerGeneratorsCmdSet" id="SubMenuGroup" priority="0xFFFF">
+			<Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE" />
+		</CommandPlacement>
+		<CommandPlacement guid="ResXDesignerGeneratorsCmdSet" id="SubMenu" priority="0x0001">
+			<Parent guid="ResXDesignerGeneratorsCmdSet" id="SubMenuGroup" />
+		</CommandPlacement>
+		<CommandPlacement guid="ResXDesignerGeneratorsCmdSet" id="CommandGroup" priority="0x0001">
+			<Parent guid="ResXDesignerGeneratorsCmdSet" id="SubMenu" />
+		</CommandPlacement>
+
+		<CommandPlacement guid="ResXDesignerGeneratorsCmdSet" id="ApplyStaticGeneratorCommand" priority="0x0001">
+			<Parent guid="ResXDesignerGeneratorsCmdSet" id="CommandGroup" />
+		</CommandPlacement>
+		<CommandPlacement guid="ResXDesignerGeneratorsCmdSet" id="ApplyServiceGeneratorCommand" priority="0x0002">
+			<Parent guid="ResXDesignerGeneratorsCmdSet" id="CommandGroup" />
+		</CommandPlacement>
+	</CommandPlacements>
+
+	<VisibilityConstraints>
+		<VisibilityItem guid="ResXDesignerGeneratorsCmdSet" id="SubMenu" context="UIContext" />
+	</VisibilityConstraints>
+
+	<Symbols>
+		<GuidSymbol name="ResXTools" value="{a40247f9-ab1f-4e9d-bdca-f43f0cf99625}" />
+		<GuidSymbol name="UIContext" value="{711a8b49-245d-4f07-841f-cb688890dbca}" />
+
+		<GuidSymbol name="ResXDesignerGeneratorsCmdSet" value="{84d2aa3b-aff2-4efa-b50d-b221930f91ae}">
+			<IDSymbol name="SubMenuGroup" value="0x1020" />
+			<IDSymbol name="CommandGroup" value="0x1021" />
+			<IDSymbol name="SubMenu" value="0x0100" />
+			<IDSymbol name="ApplyStaticGeneratorCommand" value="0x0101" />
+			<IDSymbol name="ApplyServiceGeneratorCommand" value="0x0102" />
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>
